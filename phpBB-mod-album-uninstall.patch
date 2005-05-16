@@ -1,0 +1,128 @@
+--- phpBB/viewonline.php	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/viewonline.php	2005-05-13 23:04:02.000000000 +0200
+@@ -195,10 +195,6 @@
+ 					$location = $lang['Viewing_FAQ'];
+ 					$location_url = "faq.$phpEx";
+ 					break;
+-                                case PAGE_ALBUM:
+-				        $location = $lang['Album'];
+-					$location_url = "album.$phpEx";
+-                                        break;
+ 				default:
+ 					$location = $lang['Forum_index'];
+ 					$location_url = "index.$phpEx";
+--- phpBB/templates/subSilver/overall_header.tpl	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/templates/subSilver/overall_header.tpl	2005-05-13 23:04:01.000000000 +0200
+@@ -232,7 +232,7 @@
+ 				<td align="center" width="100%" valign="middle"><span class="maintitle">{SITENAME}</span><br /><span class="gen">{SITE_DESCRIPTION}<br />&nbsp; </span> 
+ 				<table cellspacing="0" cellpadding="2" border="0">
+ 					<tr> 
+-						<td align="center" valign="top" nowrap="nowrap"><span class="mainmenu">&nbsp;<a href="{U_ALBUM}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_album.gif" width="12" height="13" border="0" alt="{L_ALBUM}" hspace="3" />{L_ALBUM}</a>&nbsp;<a href="{U_FAQ}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_faq.gif" width="12" height="13" border="0" alt="{L_FAQ}" hspace="3" />{L_FAQ}</a></span><span class="mainmenu">&nbsp; &nbsp;<a href="{U_SEARCH}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_search.gif" width="12" height="13" border="0" alt="{L_SEARCH}" hspace="3" />{L_SEARCH}</a>&nbsp; &nbsp;<a href="{U_MEMBERLIST}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_members.gif" width="12" height="13" border="0" alt="{L_MEMBERLIST}" hspace="3" />{L_MEMBERLIST}</a>&nbsp; &nbsp;<a href="{U_GROUP_CP}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_groups.gif" width="12" height="13" border="0" alt="{L_USERGROUPS}" hspace="3" />{L_USERGROUPS}</a>&nbsp; 
++						<td align="center" valign="top" nowrap="nowrap"><span class="mainmenu">&nbsp;<a href="{U_FAQ}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_faq.gif" width="12" height="13" border="0" alt="{L_FAQ}" hspace="3" />{L_FAQ}</a></span><span class="mainmenu">&nbsp; &nbsp;<a href="{U_SEARCH}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_search.gif" width="12" height="13" border="0" alt="{L_SEARCH}" hspace="3" />{L_SEARCH}</a>&nbsp; &nbsp;<a href="{U_MEMBERLIST}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_members.gif" width="12" height="13" border="0" alt="{L_MEMBERLIST}" hspace="3" />{L_MEMBERLIST}</a>&nbsp; &nbsp;<a href="{U_GROUP_CP}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_groups.gif" width="12" height="13" border="0" alt="{L_USERGROUPS}" hspace="3" />{L_USERGROUPS}</a>&nbsp; 
+ 						<!-- BEGIN switch_user_logged_out -->
+ 						&nbsp;<a href="{U_REGISTER}" class="mainmenu"><img src="templates/subSilver/images/icon_mini_register.gif" width="12" height="13" border="0" alt="{L_REGISTER}" hspace="3" />{L_REGISTER}</a></span>&nbsp;
+ 						<!-- END switch_user_logged_out -->
+--- phpBB/templates/subSilver/profile_view_body.tpl	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/templates/subSilver/profile_view_body.tpl	2005-05-13 23:04:01.000000000 +0200
+@@ -22,7 +22,7 @@
+ 		</tr>
+ 		<tr> 
+ 		  <td valign="top" align="right" nowrap="nowrap"><span class="gen">{L_TOTAL_POSTS}:&nbsp;</span></td>
+-		  <td valign="top"><b><span class="gen">{POSTS}</span></b><br /><span class="genmed">[{POST_PERCENT_STATS} / {POST_DAY_STATS}]</span> <br /><span class="genmed"><a href="{U_SEARCH_USER}" class="genmed">{L_SEARCH_USER_POSTS}</a><br /><a href="{U_PERSONAL_GALLERY}" class="genmed">{L_PERSONAL_GALLERY}</a></span></td>
++		  <td valign="top"><b><span class="gen">{POSTS}</span></b><br /><span class="genmed">[{POST_PERCENT_STATS} / {POST_DAY_STATS}]</span> <br /><span class="genmed"><a href="{U_SEARCH_USER}" class="genmed">{L_SEARCH_USER_POSTS}</a></span></td>
+ 		</tr>
+ 		<tr> 
+ 		  <td valign="middle" align="right" nowrap="nowrap"><span class="gen">{L_LOCATION}:&nbsp;</span></td>
+--- phpBB/templates/subSilver/subSilver.cfg	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/templates/subSilver/subSilver.cfg	2005-05-13 23:04:01.000000000 +0200
+@@ -98,8 +98,4 @@
+ $board_config['vote_graphic_length'] = 205;
+ $board_config['privmsg_graphic_length'] = 175;
+ 
+-// Album MOD
+-$images['upload_pic'] = "$current_template_images/{LANG}/upload_pic.gif";
+-$images['no_thumbnail'] = "$current_template_images/nothumbnail.jpg";
+-
+ ?>
+\ Brak znaku nowej linii na koñcu pliku
+--- phpBB/language/lang_english/lang_main.php	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/language/lang_english/lang_main.php	2005-05-13 23:04:01.000000000 +0200
+@@ -1007,12 +1007,6 @@
+ $lang['datetime']['Dec'] = 'Dec';
+ 
+ //
+-// Photo Album Addon v2.x.x by Smartor
+-//
+-$lang['Album'] = 'Album';
+-$lang['Personal_Gallery_Of_User'] = 'Personal Gallery of %s';
+-
+-//
+ // Errors (not related to a
+ // specific failure on a page)
+ //
+--- phpBB/language/lang_polish/lang_main.php	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/language/lang_polish/lang_main.php	2003-09-26 16:35:06.000000000 +0200
+@@ -1006,12 +1006,6 @@
+ $lang['datetime']['Dec'] = 'Gru';
+ 
+ //
+-// Photo Album Addon v2.x.x by Smartor
+-//
+-$lang['Album'] = 'Album';
+-$lang['Personal_Gallery_Of_User'] = 'Galeria prywatna %s';
+-
+-//
+ // Errors (not related to a
+ // specific failure on a page)
+ //
+--- phpBB/includes/constants.php	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/includes/constants.php	2005-05-13 23:04:00.000000000 +0200
+@@ -25,9 +25,6 @@
+ 	die("Hacking attempt");
+ }
+ 
+-// Album MOD
+-include($phpbb_root_path . 'album_mod/album_constants.' . $phpEx);
+-
+ // Debug Level
+ //define('DEBUG', 1); // Debugging on
+ define('DEBUG', 1); // Debugging off
+--- phpBB/includes/page_header.php	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/includes/page_header.php	2005-05-13 23:04:00.000000000 +0200
+@@ -395,10 +395,6 @@
+ 	'U_LOGIN_LOGOUT' => append_sid($u_login_logout),
+ 	'U_GROUP_CP' => append_sid('groupcp.'.$phpEx),
+ 
+-        // Album MOD
+-        'L_ALBUM' => $lang['Album'],
+-        'U_ALBUM' => append_sid('album.'.$phpEx),
+-
+ 	'S_CONTENT_DIRECTION' => $lang['DIRECTION'],
+ 	'S_CONTENT_ENCODING' => $lang['ENCODING'],
+ 	'S_CONTENT_DIR_LEFT' => $lang['LEFT'],
+--- phpBB/includes/usercp_viewprofile.php	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/includes/usercp_viewprofile.php	2005-05-13 23:04:00.000000000 +0200
+@@ -238,10 +238,6 @@
+ 	'L_INTERESTS' => $lang['Interests'],
+ 
+ 	'U_SEARCH_USER' => append_sid("search.$phpEx?search_author=" . $u_search_author),
+-	
+-        // Photo Album Addon v2.x.x by Smartor
+-        'U_PERSONAL_GALLERY' => append_sid("album_personal.$phpEx?user_id=" . $profiledata['user_id']),
+-        'L_PERSONAL_GALLERY' => sprintf($lang['Personal_Gallery_Of_User'], $profiledata['username']),
+ 
+ 	'S_PROFILE_ACTION' => append_sid("profile.$phpEx"))
+ );
+--- phpBB/admin/index.php	2005-05-16 17:03:18.000000000 +0200
++++ phpBB-old/admin/index.php	2005-05-13 23:04:00.000000000 +0200
+@@ -430,10 +430,6 @@
+ 							$location = $lang['Viewing_FAQ'];
+ 							$location_url = "index.$phpEx?pane=right";
+ 							break;
+-			                        case PAGE_ALBUM:
+-                                                        $location = $lang['Album'];
+-                                                        $location_url = "index.$phpEx?pane=right";
+-                                                        break;
+ 						default:
+ 							$location = $lang['Forum_index'];
+ 							$location_url = "index.$phpEx?pane=right";
