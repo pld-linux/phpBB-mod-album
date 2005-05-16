@@ -1,3 +1,5 @@
+# TODO: post/preun broken (think: upgrades),
+#       doesn't it break rpm -V phpBB?
 Summary:	Photo Album for phpBB2
 Summary(pl):	Album zdjêæ dla phpBB2
 Name:		phpBB-mod-album
@@ -12,9 +14,9 @@ Source2:	%{name}-uninstall.patch
 Source3:	%{name}-locale.tar.gz
 # patch for modified phpBB,lang_polish
 URL:		http://smartor.is-root.com
-Requires:	phpBB >= 2.0.13
 Requires:	gd
 Requires:	patch
+Requires:	phpBB >= 2.0.13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,19 +24,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define         _uploaddir      /var/lib/phpBB/album_mod
 
 %description
-This is a phpBB-based photo album/gallery management system.
-It is really powerful, stable, efficient, rich features and highly customizable.
-The version 2 was written from the scratch for more security, performance, etc.
-It is not really a MOD/hack, it is rather a phpBB-based system Smile
+This is a phpBB-based photo album/gallery management system. It is
+really powerful, stable, efficient, rich features and highly
+customizable. The version 2 was written from the scratch for more
+security, performance, etc. It is not really a MOD/hack, it is rather
+a phpBB-based system.
 
 Features:
- - Fully integrated with phpBB2 backend (DB, session, template, multi languages, etc.)
+ - Fully integrated with phpBB2 backend (DB, session, template, multi
+   languages, etc.)
  - Powerful and handy AdminCP
  - Auto-generated thumbnail
  - Manual-uploaded thumbnail
  - Thumbnail cache (for better performance)
  - Multi-categories
- - Powerfull and phpBB-like permissions system
+ - Powerful and phpBB-like permissions system
  - ModeratorCP
  - Upload Quota
  - Pic Description
@@ -42,6 +46,30 @@ Features:
  - Personal galleries (for member-oriented boards)
  - Rate system
  - Comment system
+
+%description -l pl
+To jest oparty na phpBB system zarz±dzania albumem zdjêæ/galeri±. Jest
+naprawdê potê¿ny, stabilny, wydajny, bogaty w mo¿liwo¶ci i wysoko
+konfigurowalny. Wersja 2 zosta³a przepisana od zera z wiêksz±
+dba³o¶ci± o bezpieczeñstwo, wydajno¶æ itp. To naprawdê nie jest
+MOD/hack, ale system oparty na phpBB.
+
+Mo¿liwo¶ci:
+ - w pe³ni zintegrowany z backendem phpBB2 (baza danych, sesje,
+   szablony, wielojêzyzcno¶æ itd.)
+ - potê¿ny i porêczny AdminCP
+ - automatycznie generowane miniaturki
+ - rêcznie wrzucane miniaturki
+ - pamiêæ podrêczna dla miniaturek (dla lepszej wydajno¶ci)
+ - obs³uga wielu kategorii
+ - Potê¿ny, podobny do phpBB system uprawnieñ
+ - ModeratorCP
+ - quota dla wrzucanych zdjêæ
+ - opisy zdjêæ
+ - pokazywanie najnowszych zdjêæ
+ - galerie osobiste (dla witryn zorientowanych na cz³onków)
+ - system oceniania
+ - system komentarzy
 
 %prep
 %setup -q -c
@@ -70,13 +98,13 @@ tar zxf %{SOURCE3} -C				$RPM_BUILD_ROOT%{_appdir}/language/lang_polish/
 rm -rf $RPM_BUILD_ROOT
 
 %post
- cd /usr/share
- patch -p0 < phpBB/album_mod/install.patch
- chown root:http /usr/share/phpBB/ -R
+cd /usr/share
+patch -p0 < phpBB/album_mod/install.patch
+chown root:http /usr/share/phpBB/ -R
 
 %preun
- cd /usr/share
- patch -p0 < phpBB/album_mod/uninstall.patch
+cd /usr/share
+patch -p0 < phpBB/album_mod/uninstall.patch
 
 %files
 %defattr(644,root,root,755)
