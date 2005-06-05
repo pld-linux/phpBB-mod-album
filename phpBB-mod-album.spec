@@ -14,6 +14,7 @@ Source2:	%{name}-uninstall.patch
 Source3:	%{name}-locale.tar.gz
 # patch for modified phpBB,lang_polish
 URL:		http://smartor.is-root.com
+BuildRequires:	unzip
 Requires:	gd
 Requires:	patch
 Requires:	phpBB >= 2.0.13
