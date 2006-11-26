@@ -1,5 +1,5 @@
-# TODO: post/preun broken (think: upgrades),
-#       doesn't it break rpm -V phpBB?
+# TODO
+# -  post/preun broken (think: upgrades), doesn't it break rpm -V phpBB?
 Summary:	Photo Album for phpBB2
 Summary(pl):	Album zdjêæ dla phpBB2
 Name:		phpBB-mod-album
@@ -15,8 +15,8 @@ Source3:	%{name}-locale.tar.gz
 # patch for modified phpBB,lang_polish
 URL:		http://smartor.is-root.com
 BuildRequires:	unzip
+Requires(post):	patch
 Requires:	gd
-Requires:	patch
 Requires:	phpBB >= 2.0.13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -99,9 +99,9 @@ tar zxf %{SOURCE3} -C				$RPM_BUILD_ROOT%{_appdir}/language/lang_polish/
 rm -rf $RPM_BUILD_ROOT
 
 %post
-cd /usr/share
+cd %{_datadir}
 patch -p0 < phpBB/album_mod/install.patch
-chown root:http /usr/share/phpBB/ -R
+chown root:http %{_datadir}/phpBB/ -R
 
 %preun
 cd /usr/share
