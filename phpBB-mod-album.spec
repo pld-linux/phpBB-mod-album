@@ -1,7 +1,7 @@
 # TODO
 # -  post/preun broken (think: upgrades), doesn't it break rpm -V phpBB?
 Summary:	Photo Album for phpBB2
-Summary(pl):	Album zdjêæ dla phpBB2
+Summary(pl.UTF-8):   Album zdjÄ™Ä‡ dla phpBB2
 Name:		phpBB-mod-album
 Version:	2.0.53
 Release:	0.1
@@ -48,27 +48,27 @@ Features:
  - Rate system
  - Comment system
 
-%description -l pl
-To jest oparty na phpBB system zarz±dzania albumem zdjêæ/galeri±. Jest
-naprawdê potê¿ny, stabilny, wydajny, bogaty w mo¿liwo¶ci i wysoko
-konfigurowalny. Wersja 2 zosta³a przepisana od zera z wiêksz±
-dba³o¶ci± o bezpieczeñstwo, wydajno¶æ itp. To naprawdê nie jest
+%description -l pl.UTF-8
+To jest oparty na phpBB system zarzÄ…dzania albumem zdjÄ™Ä‡/galeriÄ…. Jest
+naprawdÄ™ potÄ™Å¼ny, stabilny, wydajny, bogaty w moÅ¼liwoÅ›ci i wysoko
+konfigurowalny. Wersja 2 zostaÅ‚a przepisana od zera z wiÄ™kszÄ…
+dbaÅ‚oÅ›ciÄ… o bezpieczeÅ„stwo, wydajnoÅ›Ä‡ itp. To naprawdÄ™ nie jest
 MOD/hack, ale system oparty na phpBB.
 
-Mo¿liwo¶ci:
- - w pe³ni zintegrowany z backendem phpBB2 (baza danych, sesje,
-   szablony, wielojêzyzcno¶æ itd.)
- - potê¿ny i porêczny AdminCP
+MoÅ¼liwoÅ›ci:
+ - w peÅ‚ni zintegrowany z backendem phpBB2 (baza danych, sesje,
+   szablony, wielojÄ™zyzcnoÅ›Ä‡ itd.)
+ - potÄ™Å¼ny i porÄ™czny AdminCP
  - automatycznie generowane miniaturki
- - rêcznie wrzucane miniaturki
- - pamiêæ podrêczna dla miniaturek (dla lepszej wydajno¶ci)
- - obs³uga wielu kategorii
- - Potê¿ny, podobny do phpBB system uprawnieñ
+ - rÄ™cznie wrzucane miniaturki
+ - pamiÄ™Ä‡ podrÄ™czna dla miniaturek (dla lepszej wydajnoÅ›ci)
+ - obsÅ‚uga wielu kategorii
+ - PotÄ™Å¼ny, podobny do phpBB system uprawnieÅ„
  - ModeratorCP
- - quota dla wrzucanych zdjêæ
- - opisy zdjêæ
- - pokazywanie najnowszych zdjêæ
- - galerie osobiste (dla witryn zorientowanych na cz³onków)
+ - quota dla wrzucanych zdjÄ™Ä‡
+ - opisy zdjÄ™Ä‡
+ - pokazywanie najnowszych zdjÄ™Ä‡
+ - galerie osobiste (dla witryn zorientowanych na czÅ‚onkÃ³w)
  - system oceniania
  - system komentarzy
 
