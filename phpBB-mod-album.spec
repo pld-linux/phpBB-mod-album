@@ -1,7 +1,7 @@
 # TODO
 # -  post/preun broken (think: upgrades), doesn't it break rpm -V phpBB?
 Summary:	Photo Album for phpBB2
-Summary(pl.UTF-8):   Album zdjęć dla phpBB2
+Summary(pl.UTF-8):	Album zdjęć dla phpBB2
 Name:		phpBB-mod-album
 Version:	2.0.53
 Release:	0.1
