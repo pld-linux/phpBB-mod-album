@@ -12,6 +12,7 @@ Source0:	http://smartor.is-root.com/downloads/album_v2053.zip
 Source1:	%{name}-install.patch
 Source2:	%{name}-uninstall.patch
 Source3:	%{name}-locale.tar.gz
+# Source3-md5:	925128069df6ae7c7023502ef897d246
 # patch for modified phpBB,lang_polish
 URL:		http://smartor.is-root.com
 BuildRequires:	unzip
